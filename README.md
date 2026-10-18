@@ -11,7 +11,7 @@ npm install
 npm run build
 ```
 
-- `src/about-logos.jsx`: logo list and animation controls.
+- `src/about-logos.jsx`: logo list, visibility handling, and motion preferences.
 - `src/components/OrbitingCircles.jsx`: reusable React orbit component.
 - `src/about-logos.css`: responsive logo cards and animation styling.
 - `assets/img/logos/`: the three supplied, unmodified logo images.

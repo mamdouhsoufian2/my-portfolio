@@ -8,7 +8,7 @@ keyframes are adapted from Magic UI by Dillion Verma, featured on 21st.dev:
 - https://github.com/magicuidesign/magicui/blob/main/LICENSE.md
 
 Tailwind classes have been replaced with scoped CSS, and the component has
-been adapted for responsive logo cards, pause controls, and reduced motion.
+been adapted for responsive logo cards, visibility handling, and reduced motion.
 
 MIT License
 

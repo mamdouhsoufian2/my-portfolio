@@ -18,7 +18,6 @@ const getMotionPreference = () => motionPreference.matches;
 
 export function AboutLogoOrbit() {
   const panelRef = useRef(null);
-  const [paused, setPaused] = useState(false);
   const [inView, setInView] = useState(false);
   const [tabVisible, setTabVisible] = useState(!document.hidden);
   const reducedMotion = useSyncExternalStore(subscribeToMotion, getMotionPreference);
@@ -37,17 +36,12 @@ export function AboutLogoOrbit() {
     };
   }, []);
 
-  const stopped = paused || reducedMotion || !inView || !tabVisible;
+  const stopped = reducedMotion || !inView || !tabVisible;
 
   return (
     <div className="about-logo-orbit" ref={panelRef} data-paused={stopped}>
-      <p className="logo-orbit-eyebrow">Experience &amp; learning</p>
-      <div className="logo-orbit-scene" role="group" aria-label="DXC Technology, M-AUTOMOTIV, and Jobintech logos">
+      <div className="logo-orbit-scene" role="group" tabIndex={0} aria-label="DXC Technology, M-AUTOMOTIV, and Jobintech logos. Animation pauses while focused.">
         <div className="logo-orbit-halo" aria-hidden="true" />
-        <div className="logo-orbit-core" aria-hidden="true">
-          <span className="logo-orbit-monogram">SM</span>
-          <span className="logo-orbit-specialty">Cloud &amp; AI</span>
-        </div>
         <OrbitingCircles duration={30}>
           {logos.map((logo) => (
             <div className="logo-orbit-card" key={logo.name}>
@@ -62,22 +56,6 @@ export function AboutLogoOrbit() {
             </div>
           ))}
         </OrbitingCircles>
-      </div>
-      <div className="logo-orbit-footer">
-        <span>Cloud. Systems. Continuous learning.</span>
-        <button
-          type="button"
-          className="logo-orbit-toggle"
-          aria-label={reducedMotion ? 'Animation disabled: reduced motion preference' : paused ? 'Resume logo animation' : 'Pause logo animation'}
-          aria-pressed={paused || reducedMotion}
-          disabled={reducedMotion}
-          onClick={() => setPaused((value) => !value)}
-        >
-          <svg viewBox="0 0 20 20" width="14" height="14" fill="currentColor" aria-hidden="true">
-            {paused || reducedMotion ? <path d="M6 3.5v13l10-6.5z" /> : <path d="M5 4h3v12H5zm7 0h3v12h-3z" />}
-          </svg>
-          <span>{reducedMotion ? 'Still' : paused ? 'Play' : 'Pause'}</span>
-        </button>
       </div>
     </div>
   );
