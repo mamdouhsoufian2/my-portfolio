@@ -1,3 +1,14 @@
+# Certification logos
+
+Company logos identify the training providers and credential issuers only.
+The images are unmodified and remain the property of their respective owners.
+
+- Koenig Solutions: https://www.koenig-solutions.com/assets/newimages/koenig-logo.svg
+  (from https://www.koenig-solutions.com/).
+- IBM: https://images.credly.com/images/854d76bf-4f74-4d51-98a0-d969214bfba7/IBM%2BLogo%2Bfor%2BAcclaim%2BProfile.png
+  (from https://www.credly.com/organizations/ibm/badges).
+- Jobintech: image supplied by the portfolio owner and reused from the About section.
+
 # Orbiting Circles
 
 The React component in `src/components/OrbitingCircles.jsx` and its orbit
